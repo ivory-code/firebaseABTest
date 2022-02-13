@@ -10,6 +10,33 @@ PODS:
     - React-Core (= 0.67.2)
     - React-jsi (= 0.67.2)
     - ReactCommon/turbomodule/core (= 0.67.2)
+  - Firebase/CoreOnly (8.12.1):
+    - FirebaseCore (= 8.12.1)
+  - Firebase/RemoteConfig (8.12.1):
+    - Firebase/CoreOnly
+    - FirebaseRemoteConfig (~> 8.12.0)
+  - FirebaseABTesting (8.12.0):
+    - FirebaseCore (~> 8.0)
+  - FirebaseCore (8.12.1):
+    - FirebaseCoreDiagnostics (~> 8.0)
+    - GoogleUtilities/Environment (~> 7.7)
+    - GoogleUtilities/Logger (~> 7.7)
+  - FirebaseCoreDiagnostics (8.12.0):
+    - GoogleDataTransport (~> 9.1)
+    - GoogleUtilities/Environment (~> 7.7)
+    - GoogleUtilities/Logger (~> 7.7)
+    - nanopb (~> 2.30908.0)
+  - FirebaseInstallations (8.12.0):
+    - FirebaseCore (~> 8.0)
+    - GoogleUtilities/Environment (~> 7.7)
+    - GoogleUtilities/UserDefaults (~> 7.7)
+    - PromisesObjC (< 3.0, >= 1.2)
+  - FirebaseRemoteConfig (8.12.0):
+    - FirebaseABTesting (~> 8.0)
+    - FirebaseCore (~> 8.0)
+    - FirebaseInstallations (~> 8.0)
+    - GoogleUtilities/Environment (~> 7.7)
+    - "GoogleUtilities/NSData+zlib (~> 7.7)"
   - Flipper (0.99.0):
     - Flipper-Folly (~> 2.6)
     - Flipper-RSocket (~> 1.4)
@@ -72,8 +99,25 @@ PODS:
     - FlipperKit/FlipperKitNetworkPlugin
   - fmt (6.2.1)
   - glog (0.3.5)
+  - GoogleDataTransport (9.1.2):
+    - GoogleUtilities/Environment (~> 7.2)
+    - nanopb (~> 2.30908.0)
+    - PromisesObjC (< 3.0, >= 1.2)
+  - GoogleUtilities/Environment (7.7.0):
+    - PromisesObjC (< 3.0, >= 1.2)
+  - GoogleUtilities/Logger (7.7.0):
+    - GoogleUtilities/Environment
+  - "GoogleUtilities/NSData+zlib (7.7.0)"
+  - GoogleUtilities/UserDefaults (7.7.0):
+    - GoogleUtilities/Logger
   - libevent (2.1.12)
+  - nanopb (2.30908.0):
+    - nanopb/decode (= 2.30908.0)
+    - nanopb/encode (= 2.30908.0)
+  - nanopb/decode (2.30908.0)
+  - nanopb/encode (2.30908.0)
   - OpenSSL-Universal (1.1.180)
+  - PromisesObjC (2.0.0)
   - RCT-Folly (2021.06.28.00-v2):
     - boost
     - DoubleConversion
@@ -337,6 +381,13 @@ PODS:
     - React-jsi (= 0.67.2)
     - React-logger (= 0.67.2)
     - React-perflogger (= 0.67.2)
+  - RNFBApp (14.3.3):
+    - Firebase/CoreOnly (= 8.12.1)
+    - React-Core
+  - RNFBRemoteConfig (14.3.3):
+    - Firebase/RemoteConfig (= 8.12.1)
+    - React-Core
+    - RNFBApp
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
     - Yoga (~> 1.14)
@@ -395,11 +446,19 @@ DEPENDENCIES:
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - React-runtimeexecutor (from `../node_modules/react-native/ReactCommon/runtimeexecutor`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - "RNFBApp (from `../node_modules/@react-native-firebase/app`)"
+  - "RNFBRemoteConfig (from `../node_modules/@react-native-firebase/remote-config`)"
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
   trunk:
     - CocoaAsyncSocket
+    - Firebase
+    - FirebaseABTesting
+    - FirebaseCore
+    - FirebaseCoreDiagnostics
+    - FirebaseInstallations
+    - FirebaseRemoteConfig
     - Flipper
     - Flipper-Boost-iOSX
     - Flipper-DoubleConversion
@@ -410,8 +469,12 @@ SPEC REPOS:
     - Flipper-RSocket
     - FlipperKit
     - fmt
+    - GoogleDataTransport
+    - GoogleUtilities
     - libevent
+    - nanopb
     - OpenSSL-Universal
+    - PromisesObjC
     - YogaKit
 
 EXTERNAL SOURCES:
@@ -473,6 +536,10 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/runtimeexecutor"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  RNFBApp:
+    :path: "../node_modules/@react-native-firebase/app"
+  RNFBRemoteConfig:
+    :path: "../node_modules/@react-native-firebase/remote-config"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -482,6 +549,12 @@ SPEC CHECKSUMS:
   DoubleConversion: 831926d9b8bf8166fd87886c4abab286c2422662
   FBLazyVector: 244195e30d63d7f564c55da4410b9a24e8fbceaa
   FBReactNativeSpec: c94002c1d93da3658f4d5119c6994d19961e3d52
+  Firebase: 580d09e8edafc3073ebf09c03fd42e4d80d35fe9
+  FirebaseABTesting: 1b05c92327b3f0a9545cea3bab4d93e82550e29b
+  FirebaseCore: 8138de860a90ca7eec5e324da5788fb0ebf1d93c
+  FirebaseCoreDiagnostics: 3b40dfadef5b90433a60ae01f01e90fe87aa76aa
+  FirebaseInstallations: 25764cf322e77f99449395870a65b2bef88e1545
+  FirebaseRemoteConfig: f174a7091ac8e69bf6d0de2bae2212edb922a0ab
   Flipper: 30e8eeeed6abdc98edaf32af0cda2f198be4b733
   Flipper-Boost-iOSX: fd1e2b8cbef7e662a122412d7ac5f5bea715403c
   Flipper-DoubleConversion: 57ffbe81ef95306cc9e69c4aa3aeeeeb58a6a28c
@@ -493,8 +566,12 @@ SPEC CHECKSUMS:
   FlipperKit: d8d346844eca5d9120c17d441a2f38596e8ed2b9
   fmt: ff9d55029c625d3757ed641535fd4a75fedc7ce9
   glog: 85ecdd10ee8d8ec362ef519a6a45ff9aa27b2e85
+  GoogleDataTransport: 629c20a4d363167143f30ea78320d5a7eb8bd940
+  GoogleUtilities: e0913149f6b0625b553d70dae12b49fc62914fd1
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
+  nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   OpenSSL-Universal: 1aa4f6a6ee7256b83db99ec1ccdaa80d10f9af9b
+  PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
   RCT-Folly: 803a9cfd78114b2ec0f140cfa6fa2a6bafb2d685
   RCTRequired: cd47794163052d2b8318c891a7a14fcfaccc75ab
   RCTTypeSafety: 393bb40b3e357b224cde53d3fec26813c52428b1
@@ -519,6 +596,8 @@ SPEC CHECKSUMS:
   React-RCTVibration: 99c7f67fba7a5ade46e98e870c6ff2444484f995
   React-runtimeexecutor: 2450b43df7ffe8e805a0b3dcb2abd4282f1f1836
   ReactCommon: d98c6c96b567f9b3a15f9fd4cc302c1eda8e3cf2
+  RNFBApp: 920a4992d33019eecca3cfada87caaf3784c1cbd
+  RNFBRemoteConfig: 700ce358bf4b28f62c90645e33dfa78f7c877424
   Yoga: 9b6696970c3289e8dea34b3eda93f23e61fb8121
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
