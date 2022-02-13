@@ -6,11 +6,11 @@ import Home from './src/screens/Home';
 import Test1 from './src/components/Test1';
 import {fetchConfig} from './src/utils/firebase';
 
+fetchConfig().catch(console.log);
+
 LogBox.ignoreLogs([
   "[react-native-gesture-handler] Seems like you're using an old API with gesture components, check out new Gestures system!",
 ]);
-
-fetchConfig().catch(console.log);
 
 const Stack = createStackNavigator();
 
