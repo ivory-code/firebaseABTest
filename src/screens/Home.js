@@ -9,6 +9,7 @@ const Home = ({navigation}) => (
     <Header />
     <RefreshConfig />
     <Link text="Test #1" press={() => navigation.navigate('test1')} />
+    <Link text="Test #2" press={() => navigation.navigate('test2')} />
   </ScrollView>
 );
 

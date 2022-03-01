@@ -4,6 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import Home from './src/screens/Home';
 import Test1 from './src/components/Test1';
+import Test2 from './src/components/Test2';
 import {fetchConfig} from './src/utils/firebase';
 
 fetchConfig().catch(console.log);
@@ -29,6 +30,14 @@ const App = () => {
         <Stack.Screen
           name="test1"
           component={Test1}
+          options={{
+            title: 'Test #1',
+            ...navStyle,
+          }}
+        />
+        <Stack.Screen
+          name="test2"
+          component={Test2}
           options={{
             title: 'Test #1',
             ...navStyle,
