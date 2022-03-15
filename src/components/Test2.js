@@ -47,7 +47,9 @@ const config = {
 };
 
 const Test2 = () => {
-  const experiment = getRemoteValue('experiment_2');
+  // modify string to linkedin
+  const experiment = getRemoteValue('linkedin');
+
   return (
     <ScrollView testID="test2-screen">
       <View style={styles.container}>
