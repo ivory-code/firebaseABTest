@@ -39,7 +39,7 @@ const App = () => {
           name="test2"
           component={Test2}
           options={{
-            title: 'Test #1',
+            title: 'Test #2',
             ...navStyle,
           }}
         />
