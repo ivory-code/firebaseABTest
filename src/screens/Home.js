@@ -15,6 +15,14 @@ const Home = ({navigation}) => {
     navigation.navigate('test2');
   }, []);
 
+  const pressSecondEvent = useCallback(() => {
+    const {logo} = JSON.parse(getRemoteValue('exJson').asString());
+    analytics().logEvent('testAB_4', {
+      checkValue: logo,
+    });
+    navigation.navigate('test4');
+  }, []);
+
   return (
     <ScrollView>
       <Header />
@@ -22,6 +30,7 @@ const Home = ({navigation}) => {
       <Link text="Test #1" press={() => navigation.navigate('test1')} />
       <Link text="Test #2" press={pressEvent} />
       <Link text="Test #3" press={() => navigation.navigate('test3')} />
+      <Link text="Test #4" press={pressSecondEvent} />
     </ScrollView>
   );
 };

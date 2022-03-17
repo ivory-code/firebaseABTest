@@ -6,6 +6,7 @@ import Home from './src/screens/Home';
 import Test1 from './src/components/Test1';
 import Test2 from './src/components/Test2';
 import Test3 from './src/components/Test3';
+import Test4 from './src/components/Test4';
 import {fetchConfig} from './src/utils/firebase';
 
 fetchConfig().catch(console.log);
@@ -49,6 +50,14 @@ const App = () => {
           component={Test3}
           options={{
             title: 'Test #3',
+            ...navStyle,
+          }}
+        />
+        <Stack.Screen
+          name="test4"
+          component={Test4}
+          options={{
+            title: 'Test #4',
             ...navStyle,
           }}
         />
