@@ -5,10 +5,7 @@ import {images} from '../images/images';
 import {getRemoteValue} from '../utils/firebase';
 
 const Test1 = () => {
-  // modify boolean true to false
-  const experiment = getRemoteValue('experiment_1');
-  // console.log(typeof experiment, '???');
-  // console.log(experiment, 'mario? luigi?');
+  const exBoolean = getRemoteValue('exBoolean').asBoolean();
 
   const variants = {
     mario: (
@@ -28,7 +25,7 @@ const Test1 = () => {
           <B>Control Group</B>, otherwise, if you see <B>Luigi</B>, you are in{' '}
           <B>Variant A</B>.
         </Text>
-        {experiment === 'false' ? variants.mario : variants.luigi}
+        {exBoolean ? variants.mario : variants.luigi}
       </View>
     </ScrollView>
   );
