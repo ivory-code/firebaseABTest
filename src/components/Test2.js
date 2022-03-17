@@ -47,11 +47,7 @@ const config = {
 };
 
 const Test2 = () => {
-  // modify string to linkedin
-  const experiment = getRemoteValue('linkedin');
-  // console.log(experiment, '실험');
-  // console.log(JSON.parse(experiment?.asString()).logo);
-  const parseEx = JSON.parse(experiment?.asString()).logo;
+  const {logo} = JSON.parse(getRemoteValue('exJson_220317').asString());
 
   return (
     <ScrollView testID="test2-screen">
@@ -66,15 +62,15 @@ const Test2 = () => {
           <B>Medium</B> and <B>GitHub</B>.
         </Text>
         <TouchableOpacity
-          style={[styles.button, {borderColor: config[parseEx]?.color}]}
-          onPress={() => Linking.openURL(config[parseEx]?.url)}>
+          style={[styles.button, {borderColor: config[logo]?.color}]}
+          onPress={() => Linking.openURL(config[logo]?.url)}>
           <Image
-            source={config[parseEx]?.image}
+            source={config[logo]?.image}
             style={styles.icon}
             resizeMode="contain"
           />
-          <Text style={[styles.description, {color: config[parseEx]?.color}]}>
-            <B>{config[parseEx]?.text}</B>
+          <Text style={[styles.description, {color: config[logo]?.color}]}>
+            <B>{config[logo]?.text}</B>
           </Text>
         </TouchableOpacity>
       </View>
