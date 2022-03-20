@@ -58,7 +58,7 @@ const Test4 = () => {
           that opens a external website.
         </Text>
         <Text style={styles.description}>
-          Variants are: <B>YouTube</B>, <B>InkedIn</B>, <B>Instagram</B>,{' '}
+          Variants are: <B>YouTube</B>, <B>LinkedIn</B>, <B>Instagram</B>,{' '}
           <B>Medium</B> and <B>GitHub</B>.
         </Text>
         <TouchableOpacity
