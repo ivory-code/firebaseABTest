@@ -50,7 +50,7 @@ const Test4 = () => {
   const {logo} = JSON.parse(getRemoteValue('exJson').asString());
 
   return (
-    <ScrollView testID="test2-screen">
+    <ScrollView testID="test4-screen">
       <View style={styles.container}>
         <Text style={styles.title}>Button 🔗</Text>
         <Text style={styles.description}>
