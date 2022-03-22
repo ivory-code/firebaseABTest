@@ -3,10 +3,10 @@ import {LogBox} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import Home from './src/screens/Home';
-import Test1 from './src/components/Test1';
-import Test2 from './src/components/Test2';
-import Test3 from './src/components/Test3';
-import Test4 from './src/components/Test4';
+import TestBoolean from './src/components/TestBoolean';
+import TestJSON from './src/components/TestJSON';
+import TestString from './src/components/TestString';
+import TestNumber from './src/components/TestNumber';
 import {fetchConfig} from './src/utils/firebase';
 
 fetchConfig().catch(console.log);
@@ -22,7 +22,7 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen
-          name="home"
+          name="Home"
           component={Home}
           options={{
             title: 'Experiments',
@@ -30,34 +30,34 @@ const App = () => {
           }}
         />
         <Stack.Screen
-          name="test1"
-          component={Test1}
+          name="TestBoolean"
+          component={TestBoolean}
           options={{
-            title: 'Test #1',
+            title: 'Test Boolean',
             ...navStyle,
           }}
         />
         <Stack.Screen
-          name="test2"
-          component={Test2}
+          name="TestJSON"
+          component={TestJSON}
           options={{
-            title: 'Test #2',
+            title: 'Test JSON',
             ...navStyle,
           }}
         />
         <Stack.Screen
-          name="test3"
-          component={Test3}
+          name="TestString"
+          component={TestString}
           options={{
-            title: 'Test #3',
+            title: 'Test String',
             ...navStyle,
           }}
         />
         <Stack.Screen
-          name="test4"
-          component={Test4}
+          name="TestNumber"
+          component={TestNumber}
           options={{
-            title: 'Test #4',
+            title: 'Test Number',
             ...navStyle,
           }}
         />
