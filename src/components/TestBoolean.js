@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {StyleSheet, View, Text, Image, ScrollView} from 'react-native';
+import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
 import B from './Bold';
 import CheckEvent from './CheckEvent';
 import {images} from '../images/images';
@@ -27,9 +27,9 @@ const TestBoolean = () => {
   return (
     <ScrollView>
       <View style={styles.container}>
-        <Text style={styles.title}>Mario & Luigi /Boolean 🍄</Text>
+        <Text style={styles.title}>Mario & Luigi / Boolean 🍄</Text>
         <Text style={styles.description}>
-          In this one we will test an image! If you see <B>Mario</B> you are in{' '}
+          In this one we will test an image! If you see <B>Mario</B>, you are in{' '}
           <B>Variant A</B>, otherwise, if you see <B>Luigi</B>, you are in{' '}
           <B>Control Group</B>.
         </Text>

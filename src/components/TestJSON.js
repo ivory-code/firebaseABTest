@@ -1,12 +1,12 @@
 import React, {useEffect} from 'react';
 import {
-  StyleSheet,
-  View,
-  Text,
   Image,
-  TouchableOpacity,
   Linking,
   ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from 'react-native';
 import {images} from '../images/images';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
