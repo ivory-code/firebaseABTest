@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
   StyleSheet,
   View,
@@ -11,7 +11,10 @@ import {
 import {images} from '../images/images';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import {getRemoteValue} from '../utils/firebase';
+import {CUSTOM_LOGEVENT} from '../constants';
+import CheckEvent from './CheckEvent';
 import B from './Bold';
+import analytics from '@react-native-firebase/analytics';
 
 const config = {
   youtube: {
@@ -46,19 +49,25 @@ const config = {
   },
 };
 
-const Test4 = () => {
-  const {logo} = JSON.parse(getRemoteValue('exJson').asString());
+const TestJSON = () => {
+  const {logo} = JSON.parse(getRemoteValue('typeJSON').asString());
+
+  useEffect(() => {
+    analytics().logEvent('typeJSON', {
+      checkValue: logo,
+    });
+  }, []);
 
   return (
-    <ScrollView testID="test4-screen">
+    <ScrollView>
       <View style={styles.container}>
-        <Text style={styles.title}>Button 🔗</Text>
+        <Text style={styles.title}>Images / JSON 🔗</Text>
         <Text style={styles.description}>
           Ok, let's test more than two posibilities! Here you will see a button
           that opens a external website.
         </Text>
         <Text style={styles.description}>
-          Variants are: <B>YouTube</B>, <B>LinkedIn</B>, <B>Instagram</B>,{' '}
+          Variants are: <B>LinkedIn</B>, <B>Youtube</B>, <B>Instagram</B>,{' '}
           <B>Medium</B> and <B>GitHub</B>.
         </Text>
         <TouchableOpacity
@@ -74,6 +83,7 @@ const Test4 = () => {
           </Text>
         </TouchableOpacity>
       </View>
+      <CheckEvent eventName={CUSTOM_LOGEVENT.TYPE_JSON} value={logo} />
     </ScrollView>
   );
 };
@@ -111,4 +121,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Test4;
+export default TestJSON;

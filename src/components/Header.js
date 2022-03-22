@@ -5,10 +5,11 @@ import B from './Bold';
 
 const Header = () => (
   <View style={styles.container}>
-    <Text style={styles.title}>A/B Testing 🧪👨🏻‍🔬</Text>
+    <Text style={styles.title}>Firebase Test 🧪👨🏻‍🔬</Text>
     <Text style={styles.description}>
       Hi there! This is a demo project to show the power of Firebase{' '}
-      <B>A/B Testing</B> and <B>Remote Config</B> tools with React Native.
+      <B>Custom Log Events</B>, <B>A/B Testing</B> and <B>Remote Config</B>{' '}
+      tools with React Native.
     </Text>
   </View>
 );
