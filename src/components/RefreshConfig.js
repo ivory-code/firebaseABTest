@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {TouchableOpacity, Text, StyleSheet, Image} from 'react-native';
+import {Image, StyleSheet, Text, TouchableOpacity} from 'react-native';
 import {refreshConfig} from '../utils/firebase';
 import {images} from '../images/images';
 
