@@ -1,16 +1,21 @@
-import React, {useCallback, useState} from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import React, {useCallback, useState} from 'react'
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 
-const CheckEvent = ({eventName, value}) => {
-  const [isChecked, setChecked] = useState(false);
+interface Props {
+  eventName: string
+  value: boolean | number | string
+}
+
+const CheckEvent = ({eventName, value}: Props) => {
+  const [isChecked, setChecked] = useState(false)
 
   const pressButton = useCallback(() => {
     if (!isChecked) {
-      setChecked(true);
+      setChecked(true)
     } else if (isChecked) {
-      setChecked(false);
+      setChecked(false)
     }
-  }, [isChecked]);
+  }, [isChecked])
 
   return (
     <View style={styles.container}>
@@ -26,8 +31,8 @@ const CheckEvent = ({eventName, value}) => {
         </Text>
       </View>
     </View>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -52,6 +57,6 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     color: '#333',
   },
-});
+})
 
-export default CheckEvent;
+export default CheckEvent

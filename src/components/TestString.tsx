@@ -1,20 +1,20 @@
-import React, {useEffect} from 'react';
-import {ScrollView, StyleSheet, Text, View} from 'react-native';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
-import analytics from '@react-native-firebase/analytics';
-import {getRemoteValue} from '../utils/firebase';
-import {CUSTOM_LOGEVENT} from '../constants';
-import CheckEvent from './CheckEvent';
-import B from './Bold';
+import React, {useEffect} from 'react'
+import {ScrollView, StyleSheet, Text, View} from 'react-native'
+import {Colors} from 'react-native/Libraries/NewAppScreen'
+import analytics from '@react-native-firebase/analytics'
+import {getRemoteValue} from '../utils/firebase'
+import {CUSTOM_LOGEVENT} from '../constants'
+import CheckEvent from './CheckEvent'
+import B from './Bold'
 
 const TestString = () => {
-  const typeString = getRemoteValue('typeString').asString();
+  const typeString = getRemoteValue('typeString').asString()
 
   useEffect(() => {
     analytics().logEvent('typeString', {
       checkValue: typeString,
-    });
-  });
+    })
+  })
 
   return (
     <ScrollView>
@@ -40,8 +40,8 @@ const TestString = () => {
       </View>
       <CheckEvent eventName={CUSTOM_LOGEVENT.TYPE_STRING} value={typeString} />
     </ScrollView>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -77,6 +77,6 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     borderRadius: 8,
   },
-});
+})
 
-export default TestString;
+export default TestString

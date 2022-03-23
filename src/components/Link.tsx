@@ -1,11 +1,16 @@
-import React from 'react';
-import {StyleSheet, Text, TouchableOpacity} from 'react-native';
+import React from 'react'
+import {StyleSheet, Text, TouchableOpacity} from 'react-native'
 
-const Link = ({text, press, testID}) => (
-  <TouchableOpacity style={styles.button} onPress={press} testID={testID}>
+interface Props {
+  text: string
+  press: () => void
+}
+
+const Link = ({text, press}: Props) => (
+  <TouchableOpacity style={styles.button} onPress={press}>
     <Text style={styles.text}>{text}</Text>
   </TouchableOpacity>
-);
+)
 
 const styles = StyleSheet.create({
   button: {
@@ -25,6 +30,6 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     color: '#333',
   },
-});
+})
 
-export default Link;
+export default Link

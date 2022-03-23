@@ -1,14 +1,14 @@
-import React, {useEffect} from 'react';
-import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
-import B from './Bold';
-import CheckEvent from './CheckEvent';
-import {images} from '../images/images';
-import {getRemoteValue} from '../utils/firebase';
-import {CUSTOM_LOGEVENT} from '../constants';
-import analytics from '@react-native-firebase/analytics';
+import React, {useEffect} from 'react'
+import {Image, ScrollView, StyleSheet, Text, View} from 'react-native'
+import B from './Bold'
+import CheckEvent from './CheckEvent'
+import {images} from '../images/images'
+import {getRemoteValue} from '../utils/firebase'
+import {CUSTOM_LOGEVENT} from '../constants'
+import analytics from '@react-native-firebase/analytics'
 
 const TestBoolean = () => {
-  const typeBoolean = getRemoteValue('typeBoolean').asBoolean();
+  const typeBoolean = getRemoteValue('typeBoolean').asBoolean()
   const variants = {
     mario: (
       <Image source={images.mario} style={styles.image} resizeMode="contain" />
@@ -16,13 +16,13 @@ const TestBoolean = () => {
     luigi: (
       <Image source={images.luigi} style={styles.image} resizeMode="contain" />
     ),
-  };
+  }
 
   useEffect(() => {
     analytics().logEvent('typeBoolean', {
       checkValue: typeBoolean.toString(),
-    });
-  }, []);
+    })
+  }, [])
 
   return (
     <ScrollView>
@@ -40,8 +40,8 @@ const TestBoolean = () => {
         value={typeBoolean}
       />
     </ScrollView>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -81,6 +81,6 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     color: '#333',
   },
-});
+})
 
-export default TestBoolean;
+export default TestBoolean

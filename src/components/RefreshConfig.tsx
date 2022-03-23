@@ -1,19 +1,19 @@
-import React, {useState} from 'react';
-import {Image, StyleSheet, Text, TouchableOpacity} from 'react-native';
-import {refreshConfig} from '../utils/firebase';
-import {images} from '../images/images';
+import React, {useState} from 'react'
+import {Image, StyleSheet, Text, TouchableOpacity} from 'react-native'
+import {refreshConfig} from '../utils/firebase'
+import {images} from '../images/images'
 
 const RefreshConfig = () => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false)
 
   const refreshPress = () => {
-    setLoading(true);
+    setLoading(true)
     refreshConfig()
       .catch(console.log)
       .finally(() => {
-        setLoading(false);
-      });
-  };
+        setLoading(false)
+      })
+  }
 
   const content = {
     refresh: <Text style={styles.text}>Refresh Values</Text>,
@@ -24,7 +24,7 @@ const RefreshConfig = () => {
         resizeMode="contain"
       />
     ),
-  };
+  }
 
   return (
     <TouchableOpacity
@@ -33,8 +33,8 @@ const RefreshConfig = () => {
       testID="refreshButton">
       {loading ? content.spinner : content.refresh}
     </TouchableOpacity>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   button: {
@@ -59,6 +59,6 @@ const styles = StyleSheet.create({
     width: 24,
     height: 24,
   },
-});
+})
 
-export default RefreshConfig;
+export default RefreshConfig
