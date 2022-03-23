@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect} from 'react'
 import {
   Image,
   Linking,
@@ -7,18 +7,33 @@ import {
   Text,
   TouchableOpacity,
   View,
-} from 'react-native';
-import {images} from '../images/images';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
-import {getRemoteValue} from '../utils/firebase';
-import {CUSTOM_LOGEVENT} from '../constants';
-import CheckEvent from './CheckEvent';
-import B from './Bold';
-import analytics from '@react-native-firebase/analytics';
+} from 'react-native'
+import {images} from '../images/images'
+import {Colors} from 'react-native/Libraries/NewAppScreen'
+import {getRemoteValue} from '../utils/firebase'
+import {CUSTOM_LOGEVENT} from '../constants'
+import CheckEvent from './CheckEvent'
+import B from './Bold'
+import analytics from '@react-native-firebase/analytics'
 
-const config = {
+interface DetailProps {
+  text: string
+  image: object
+  color: string
+  url: string
+}
+
+interface NameProps {
+  youtube: DetailProps
+  linkedin: DetailProps
+  instagram: DetailProps
+  medium: DetailProps
+  github: DetailProps
+}
+
+const config: NameProps = {
   youtube: {
-    text: 'YouTube',
+    text: 'YouToube',
     image: images.youtube,
     color: '#FF0000',
     url: 'https://www.youtube.com/',
@@ -47,16 +62,16 @@ const config = {
     color: '#333333',
     url: 'https://www.github.com/',
   },
-};
+}
 
 const TestJSON = () => {
-  const {logo} = JSON.parse(getRemoteValue('typeJSON').asString());
+  const {logo} = JSON.parse(getRemoteValue('typeJSON').asString())
 
   useEffect(() => {
     analytics().logEvent('typeJSON', {
       checkValue: logo,
-    });
-  }, []);
+    })
+  }, [])
 
   return (
     <ScrollView>
@@ -85,8 +100,8 @@ const TestJSON = () => {
       </View>
       <CheckEvent eventName={CUSTOM_LOGEVENT.TYPE_JSON} value={logo} />
     </ScrollView>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -119,6 +134,6 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     borderRadius: 32,
   },
-});
+})
 
-export default TestJSON;
+export default TestJSON

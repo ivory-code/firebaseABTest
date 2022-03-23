@@ -7,4 +7,4 @@ export const images = {
   medium: require('./gallery/medium-logo.png'),
   github: require('./gallery/github-logo.png'),
   loader: require('./gallery/loader.gif'),
-};
+}

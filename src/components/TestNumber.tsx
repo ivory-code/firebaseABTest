@@ -1,20 +1,20 @@
-import React, {useEffect} from 'react';
-import {ScrollView, StyleSheet, Text, View} from 'react-native';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
-import analytics from '@react-native-firebase/analytics';
-import {getRemoteValue} from '../utils/firebase';
-import {CUSTOM_LOGEVENT} from '../constants';
-import CheckEvent from './CheckEvent';
-import B from './Bold';
+import React, {useEffect} from 'react'
+import {ScrollView, StyleSheet, Text, View} from 'react-native'
+import {Colors} from 'react-native/Libraries/NewAppScreen'
+import analytics from '@react-native-firebase/analytics'
+import {getRemoteValue} from '../utils/firebase'
+import {CUSTOM_LOGEVENT} from '../constants'
+import CheckEvent from './CheckEvent'
+import B from './Bold'
 
 const TestNumber = () => {
-  const typeNumber = getRemoteValue('typeNumber').asNumber();
+  const typeNumber = getRemoteValue('typeNumber').asNumber()
 
   useEffect(() => {
     analytics().logEvent('typeNumber', {
       checkValue: typeNumber.toString(),
-    });
-  }, []);
+    })
+  }, [])
 
   return (
     <ScrollView>
@@ -37,8 +37,8 @@ const TestNumber = () => {
       </View>
       <CheckEvent eventName={CUSTOM_LOGEVENT.TYPE_NUMBER} value={typeNumber} />
     </ScrollView>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -69,6 +69,6 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     borderRadius: 8,
   },
-});
+})
 
-export default TestNumber;
+export default TestNumber
